@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import { getCurrentDirectory } from './getCurrentDirectory.js';
 import { fileExists } from './checkExists.js';
@@ -10,7 +10,7 @@ export const createFile = async (fileName) => {
   if (await fileExists(filePath)) {
     console.log(`Invalid input. The file '${filePath}' already exists.`);
   } else {
-    await fs.promises.writeFile(filePath, '');
+    await fs.writeFile(filePath, '');
     console.log(`File '${filePath}' created successfully.`);
   }
   console.log(`You are currently in ${getCurrentDirectory()}`);

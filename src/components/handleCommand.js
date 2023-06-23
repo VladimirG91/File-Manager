@@ -15,6 +15,8 @@ import {
   getUsername,
   getArchitecture,
 } from '../functions/os.js';
+import { getHash } from '../functions/getHash.js';
+
 export const handleCommand = async (input, rl) => {
   try {
     const [command, ...args] = input.trim().split(' ');
@@ -49,6 +51,9 @@ export const handleCommand = async (input, rl) => {
           break;
         case '.exit':
           rl.close();
+          break;
+        case 'hash':
+          await getHash(args[0]);
           break;
         case 'os':
           switch (args[0]) {

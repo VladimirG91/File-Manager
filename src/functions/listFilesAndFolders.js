@@ -1,10 +1,10 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import { getCurrentDirectory } from './getCurrentDirectory.js';
 
 export const listFilesAndFolders = async () => {
   const currentDirectory = getCurrentDirectory();
-  const contents = await fs.promises.readdir(currentDirectory, {
+  const contents = await fs.readdir(currentDirectory, {
     withFileTypes: true,
   });
 
