@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import path from 'path';
 import { getCurrentDirectory } from './getCurrentDirectory.js';
 import { fileExists } from './checkExists.js';
 
